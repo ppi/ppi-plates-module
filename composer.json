@@ -1,0 +1,25 @@
+{
+    "name": "ppi/plates-module",
+    "description": "Plates template engine module for PPI2",
+    "keywords": ["ppi", "plates", "templating", "view"],
+    "homepage": "https://github.com/ppi/ppi-plates-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Dragoonis",
+            "email": "paul@ppi.io"
+        }
+    ],
+    "support": {
+        "irc": "irc://irc.freenode.org/ppi",
+        "issues": "https://github.com/ppi/ppi-mustache-module/issues"
+    },
+    "require": {
+        "league/plates": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "PPI\\PlatesModule": "" }
+    },
+    "target-dir": "PPI/PlatesModule",
+    "minimum-stability": "dev"
+}
