@@ -1,8 +1,6 @@
 PPI Plates Module
 =================
 
-Plates template engine module for PPI2
-
 [@php]:     http://php.net/         "PHP: Hypertext Preprocessor"
 [@ppi]:     http://ppi.io/          "PPI Framework - The PHP Meta Framework!"
 [@plates]:  http://platesphp.com/  "The compiling PHP template engine"
