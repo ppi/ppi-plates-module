@@ -8,11 +8,15 @@
         {
             "name": "Paul Dragoonis",
             "email": "paul@ppi.io"
+        },
+        {
+            "name": "Vítor Brandão",
+            "email": "vitor@ppi.io"
         }
     ],
     "support": {
         "irc": "irc://irc.freenode.org/ppi",
-        "issues": "https://github.com/ppi/ppi-mustache-module/issues"
+        "issues": "https://github.com/ppi/ppi-plates-module/issues"
     },
     "require": {
         "league/plates": "dev-master"
