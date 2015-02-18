@@ -1,6 +1,8 @@
 PPI Plates Module
 =================
 
+[![Join the chat at https://gitter.im/ppi/ppi-plates-module](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ppi/ppi-plates-module?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [@php]:     http://php.net/         "PHP: Hypertext Preprocessor"
 [@ppi]:     http://ppi.io/          "PPI Framework - The PHP Meta Framework!"
 [@plates]:  http://platesphp.com/  "The compiling PHP template engine"
