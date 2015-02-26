@@ -19,7 +19,8 @@
         "issues": "https://github.com/ppi/ppi-plates-module/issues"
     },
     "require": {
-        "league/plates": "dev-master"
+        "league/plates": "dev-master",
+        "ppi/framework": "dev-develop"
     },
     "autoload": {
         "psr-0": { "PPI\\PlatesModule": "" }
