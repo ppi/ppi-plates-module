@@ -27,6 +27,10 @@ class PlatesWrapperFactory implements FactoryInterface
         'ext' => 'plate'
     ];
 
+    /**
+     * @param ServiceLocatorInterface $serviceLocator
+     * @return PlatesWrapper
+     */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $platesEngine = new PlatesEngine();

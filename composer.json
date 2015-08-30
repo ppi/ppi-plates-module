@@ -19,7 +19,8 @@
         "issues": "https://github.com/ppi/ppi-plates-module/issues"
     },
     "require": {
-        "league/plates": "~3.1"
+        "league/plates": "~3.1",
+        "ppi/framework": "2.1.x-dev"
     },
     "autoload": {
         "psr-4": { "PPI\\PlatesTemplating\\": "src" }
