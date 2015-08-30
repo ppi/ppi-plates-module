@@ -16,10 +16,10 @@ use PPI\Module\AbstractModule;
  * PPI Plates Module.
  *
  * @author Vítor Brandão <vitor@ppi.io>
+ * @author Paul Dragoonis <paul@ppi.io>
  */
 class Module extends AbstractModule
 {
-    const VERSION = '0.0.1-DEV';
 
     /**
      * {@inheritDoc}
