@@ -6,7 +6,7 @@ use PPI\Framework\View\EngineInterface;
 use League\Plates\Engine as PlatesEngine;
 use PPI\Framework\Http\Response;
 
-class PlatesWrapper
+class PlatesWrapper implements EngineInterface
 {
 
     /**

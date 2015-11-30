@@ -8,7 +8,7 @@
  * @link        http://www.ppi.io
  */
 
-namespace PPI\PlatesTemplating\Factory;
+namespace PPI\PlatesModule\Factory;
 
 use League\Plates\Engine as PlatesEngine;
 use PPI\PlatesTemplating\PlatesWrapper;
@@ -33,6 +33,7 @@ class PlatesWrapperFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
+        var_dump(__METHOD__); exit;
         $platesEngine = new PlatesEngine();
 
         $config = $serviceLocator->get('Config');

@@ -23,7 +23,7 @@
         "ppi/framework": "2.1.x-dev"
     },
     "autoload": {
-        "psr-4": { "PPI\\PlatesTemplating\\": "src" }
+        "psr-4": { "PPI\\PlatesModule\\": "src" }
     },
     "minimum-stability": "dev"
 }

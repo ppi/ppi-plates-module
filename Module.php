@@ -11,6 +11,7 @@ namespace PPI\PlatesModule;
 
 use PPI\Autoload;
 use PPI\Module\AbstractModule;
+use PPI\PlatesModule\Factory\PlatesWrapperFactory;
 
 /**
  * PPI Plates Module.
@@ -21,30 +22,31 @@ use PPI\Module\AbstractModule;
 class Module extends AbstractModule
 {
 
-    /**
-     * {@inheritDoc}
-     */
-    public function init($e)
-    {
-        Autoload::add(__NAMESPACE__, dirname(__DIR__));
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getName()
-    {
-        return 'PPIPlatesModule';
-    }
+    protected $name = 'PPIPlatesModule';
 
     /**
      * {@inheritDoc}
      */
     public function getConfig()
     {
-        // return array('plates' => $this->loadConfig('plates.php'));
-        // or
-        return array('plates' => require_once __DIR__.'/resources/config/plates.php');
+        return ['plates' => $this->loadConfig(__DIR__.'/resources/config/plates.php')];
+    }
 
+    public function getServiceConfig()
+    {
+        return ['factories' = [
+            'templating.engine.plate' => PlatesWrapperFactory::class
+        ]];
+    }
+
+    public function getAutoloaderConfig()
+    {
+        return array(
+            'Zend\Loader\StandardAutoloader' => array(
+                'namespaces' => array(
+                    __NAMESPACE__ => __DIR__ . '/src/',
+                ),
+            ),
+        );
     }
 }
