@@ -11,7 +11,7 @@
 namespace PPI\PlatesModule\Factory;
 
 use League\Plates\Engine as PlatesEngine;
-use PPI\PlatesTemplating\PlatesWrapper;
+use PPI\PlatesModule\Wrapper\PlatesWrapper;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
@@ -23,9 +23,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class PlatesWrapperFactory implements FactoryInterface
 {
 
-    protected $defaultConfig = [
-        'ext' => 'plate'
-    ];
+    protected $defaultConfig = ['ext' => 'plate'];
 
     /**
      * @param ServiceLocatorInterface $serviceLocator
@@ -33,25 +31,29 @@ class PlatesWrapperFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        var_dump(__METHOD__); exit;
         $platesEngine = new PlatesEngine();
 
         $config = $serviceLocator->get('Config');
-        if (!isset($config['templating']['plates'])) {
-//            throw new \RuntimeException('No Plates Templating Configuration Found');
+        if (!isset($config['plates'])) {
             $platesConfig = $defaultConfig;
         } else {
-            $defaultConfig = $config['templating']['plates'];
+            $platesConfig = $config['plates'];
         }
 
         // @todo - config file ext
         if (!isset($platesConfig['ext'])) {
-            $ext = self::$defaultConfig['ext'];
+            $ext = $this->defaultConfig['ext'];
         }
 
         $platesEngine->setFileExtension($ext);
 
-        $platesWrapper = new PlatesWrapper($platesEngine);
+        $platesWrapper = new PlatesWrapper(
+            $platesEngine,
+            $serviceLocator->get('templating.locator'),
+            $serviceLocator->get('templating.name_parser'),
+            $serviceLocator->get('templating.loader')
+        );
 
         return $platesWrapper;
     }
+}
