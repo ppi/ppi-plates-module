@@ -12,6 +12,7 @@ namespace PPI\PlatesModule;
 use PPI\Autoload;
 use PPI\Framework\Module\AbstractModule;
 use PPI\PlatesModule\Factory\PlatesWrapperFactory;
+use PPI\PlatesModule\Factory\PlatesEngineFactory;
 
 /**
  * PPI Plates Module.
@@ -38,7 +39,8 @@ class Module extends AbstractModule
     public function getServiceConfig()
     {
         return ['factories' => [
-            'templating.engine.plates' => PlatesWrapperFactory::class
+            'templating.engine.plates' => PlatesWrapperFactory::class,
+            'plates.engine' => PlatesEngineFactory::class
         ]];
     }
 }

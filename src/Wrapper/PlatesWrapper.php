@@ -48,9 +48,9 @@ class PlatesWrapper implements EngineInterface
         $templateFile = ltrim(str_replace($templateDirPath, '', $templatePath), '/');
         $fileExt = $this->platesEngine->getFileExtension();
         $templateFile = substr($templateFile, 0, (
-            strlen($templateFile) -
-            // We want to go from start of string to just before the extension, including the '.' which is why the have +1
-            (strlen($fileExt) + 1)
+            strlen($templateFile)
+            -
+            (strlen($fileExt) + 1) // We want to go from start of string to just before the extension, including the '.' which is why the have
         ));
         $result = $this->platesEngine->render($templateFile, $parameters);
         return $result;

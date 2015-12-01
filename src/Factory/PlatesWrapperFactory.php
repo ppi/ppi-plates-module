@@ -31,7 +31,7 @@ class PlatesWrapperFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $platesEngine = new PlatesEngine();
+        $platesEngine = $serviceLocator->get('plates.engine');
 
         $config = $serviceLocator->get('Config');
         if (!isset($config['plates']['ext'])) {
