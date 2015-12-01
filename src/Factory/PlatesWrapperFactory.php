@@ -23,7 +23,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class PlatesWrapperFactory implements FactoryInterface
 {
 
-    protected $defaultConfig = ['ext' => 'plate'];
+    protected $defaultConfig = ['ext' => 'plates'];
 
     /**
      * @param ServiceLocatorInterface $serviceLocator
@@ -34,16 +34,13 @@ class PlatesWrapperFactory implements FactoryInterface
         $platesEngine = new PlatesEngine();
 
         $config = $serviceLocator->get('Config');
-        if (!isset($config['plates'])) {
-            $platesConfig = $defaultConfig;
+        if (!isset($config['plates']['ext'])) {
+            $platesConfig = $this->defaultConfig;
         } else {
             $platesConfig = $config['plates'];
         }
 
-        // @todo - config file ext
-        if (!isset($platesConfig['ext'])) {
-            $ext = $this->defaultConfig['ext'];
-        }
+        $ext = $platesConfig['ext'];
 
         $platesEngine->setFileExtension($ext);
 

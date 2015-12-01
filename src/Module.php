@@ -37,9 +37,8 @@ class Module extends AbstractModule
 
     public function getServiceConfig()
     {
-        return [
-            'factories' => [
-            'templating.engine.plate' => PlatesWrapperFactory::class
+        return ['factories' => [
+            'templating.engine.plates' => PlatesWrapperFactory::class
         ]];
     }
 }

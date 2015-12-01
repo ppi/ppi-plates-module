@@ -9,13 +9,8 @@
  * @link        http://www.ppi.io
  */
 
-/**
- * Smarty options.
- *
- * The whole list can be seen here: {@link http://www.smarty.net/docs/en/api.variables.tpl}
- */
-return array(
-    'options'   => array(
+return [
+    'options'   => [
         // ...
-    )
-);
+    ]
+];
